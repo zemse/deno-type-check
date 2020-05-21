@@ -22,7 +22,8 @@ function fetchTransactionAmount(hash: string): number {
 
 // To work with optional multiple types
 function enterAmount(input: number | string) {
-  validateMultiple(input, [t.hex, t.number]);
+  // Throws if all the type checks fail
+  validateMultiple(input, [t.number, t.hex]);
 }
 ```
 
