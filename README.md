@@ -1,15 +1,17 @@
 # type_check
-Runtime type check library for Deno 
+
+Runtime type check library for Deno
 
 ```typescript
-import { t, validate, check } from "https://raw.githubusercontent.com/zemse/deno-type-check/master/mod.ts";
+import { t, validate, check } from 'https://deno.land/x/type_check/mod.ts';
 
 function submitAge(age: number): void {
   // Throws if not a unsigned integer (non-negative)
   validate(age, t.uint);
 
   // OR To receive a boolean
-  if(check(age, t.uint)) {}
+  if (check(age, t.uint)) {
+  }
 }
 
 function fetchTransactionAmount(hash: string): number {
@@ -17,7 +19,8 @@ function fetchTransactionAmount(hash: string): number {
   validate(hash, t.hex32);
 
   // OR To receive a boolean
-  if(check(hash, t.hex32)) {}
+  if (check(hash, t.hex32)) {
+  }
 }
 
 // To work with optional multiple types
@@ -30,6 +33,7 @@ function enterAmount(input: number | string) {
 ## Type Checkers Available
 
 ### String
+
 - string
 - hex
 - hex20
@@ -37,12 +41,14 @@ function enterAmount(input: number | string) {
 - hex65
 
 ### Nubmer
+
 - number
 - int
 - uint
 - uint8
 
 ### Objects
+
 - array
 - uint8array
 - functionObject
